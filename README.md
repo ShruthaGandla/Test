@@ -9,6 +9,7 @@ NOTES:
 
 Chrome - Audits - Better performance score when we build in production mode
 - webpack minifies the bundle.js automatically when the mode is set to production
+- to get 100 performance score, also use the webpack compress plug and serve the gz file using express server.(alternate: webpack-dev-server --compress --config webpack.prod.js --open --hot)
 
 
 - Also dist folder is not generated in our folder structure when we use webpack-dev-server
