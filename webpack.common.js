@@ -2,6 +2,7 @@
 const path = require('path');
 //htmlWebPackPlugin: This generates the HTML dynamically, with an <script> tag including our dist/app.js file.
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
 
     // give the entry JS file for our app.
@@ -27,9 +28,11 @@ module.exports = {
     },
 
     plugins: [
+        new CompressionPlugin(),
         //We can also not specify the template, the plugun will create a default html.
         // But if we want to add any scripts this is a nice way to create our own html, add scripts 
-        new HtmlWebpackPlugin({template: './src/index.html'})
+        new HtmlWebpackPlugin({template: './src/index.html'}),
+       
     ]
 
 
