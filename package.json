@@ -4,8 +4,11 @@
   "description": "Test push/clone",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production"
+    "buildDev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "startDev": "webpack-dev-server --config webpack.dev.js --open --hot",
+    "start": "webpack-dev-server --config webpack.prod.js --open --hot"
+
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,7 @@
     "style-loader": "^1.1.3",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   }
 }
