@@ -12,16 +12,17 @@ module.exports = {
         rules : [
             {
                 test: /\.(js|jsx)$/,
-                // if we dont want to transpile all the js files inside node_modules
+                // if we dont want to transpile all the js files inside node_modules, the modules in the imports will be transpiled.
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
                 }
 
             },
+            // look at all the files ending with .css and use the loader provided
             {
                test: /\.css/,
-               loader: 'css-loader' 
+               use: [ 'style-loader', 'css-loader' ] 
             }
         ]
 
